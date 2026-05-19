@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cyan-300: #427dfd;
+  --color-cyan-400: #155DFC;
+  --color-cyan-500: #0f4dc7;
+  --color-cyan-800: #062f87;
+  --color-cyan-900: #042261;
+  --color-cyan-950: #031846;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    @apply font-sans bg-black text-zinc-200 antialiased selection:bg-white/20 selection:text-white overscroll-none;
+    font-feature-settings: "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer utilities {
+  .clip-scan {
+    clip-path: polygon(0 0, 100% 0, 100% var(--scan-y, 0%), 0 var(--scan-y, 0%));
+  }
+  
+  .glass-panel {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 40px rgba(255,255,255,0.4);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+

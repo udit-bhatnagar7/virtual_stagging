@@ -1,0 +1,6 @@
+{
+  "name": "RIA - Cinematic Real Estate OS",
+  "description": "A cinematic spatial computing and AI rendering platform for luxury real estate.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
